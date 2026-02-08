@@ -5,5 +5,6 @@ export default defineConfig({
   ssr: false,
   vite: {
     plugins: [tailwindcss()],
+    base: process.env.NODE_ENV === 'production' ? '/linkswap64/' : '/',
   },
 });
