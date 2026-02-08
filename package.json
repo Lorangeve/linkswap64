@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "deploy": "bun run build && rm -rf docs && mkdir -p docs && cp -r .output/public/* docs/ && echo '✅ Deployment files copied to docs folder for GitHub Pages' && echo '📁 Files in docs/: ' && ls -la docs/",
+    "deploy:clean": "rm -rf docs && echo '🗑️  docs folder removed'"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.0",
