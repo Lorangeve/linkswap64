@@ -1,6 +1,6 @@
 dist
 .wrangler
-.output
+#.output
 .vercel
 .netlify
 .vinxi
