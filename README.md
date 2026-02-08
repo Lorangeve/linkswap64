@@ -33,10 +33,10 @@ By default, `npm run build` will generate a Node app that you can run with `npm 
 
 ## Deployment to GitHub Pages
 
-This project includes an automated deployment script for GitHub Pages:
+This project is configured for **Static Site Generation (SSG)** and includes an automated deployment script for GitHub Pages:
 
 ```bash
-# Build and deploy with path fixes for GitHub Pages
+# Build and deploy with SSG and path fixes
 bun run deploy
 
 # Simple deploy (no path fixes)
@@ -48,7 +48,10 @@ bun run deploy:clean
 
 ### GitHub Pages Setup
 
-1. Run `bun run deploy` to generate the docs folder with fixed paths
+1. Run `bun run deploy` to generate static files in docs folder:
+   ```bash
+   bun run deploy
+   ```
 2. Commit and push the docs folder:
    ```bash
    git add docs/
@@ -63,9 +66,18 @@ bun run deploy:clean
 
 Your site will be available at: `https://lorangeve.github.io/linkswap64/`
 
+### SSG Configuration
+The project is configured for Static Site Generation in `app.config.ts`:
+- `ssr: true` - Enables server-side rendering for SSG
+- `preset: 'static'` - Uses static preset for GitHub Pages
+- `prerender: { crawlLinks: true }` - Automatically crawls and prerenders all routes
+- Generated static files: `/`, `/about/`, and `404.html` for SPA fallback
+
 ### What the deploy script does:
-- ✅ Builds the project
+- ✅ Builds the project with SSG (Static Site Generation)
+- ✅ Prerenders all routes as static HTML files
 - ✅ Copies all static files to `docs/` folder
 - ✅ Fixes absolute paths to relative paths for GitHub Pages
 - ✅ Creates `.nojekyll` file to bypass Jekyll processing
+- ✅ Creates `404.html` for SPA client-side routing fallback
 - ✅ Provides clear next steps

@@ -1,64 +1,64 @@
 {
-  "_Counter--A_RVaML.js": {
-    "file": "assets/Counter--A_RVaML.js",
+  "_Counter-4ULZgMY6.js": {
+    "file": "assets/Counter-4ULZgMY6.js",
     "name": "Counter",
     "imports": [
-      "_routing-BfG_INYr.js"
+      "_routing-Bz1-Jje6.js"
     ]
   },
-  "_components-DgPT5NBf.js": {
-    "file": "assets/components-DgPT5NBf.js",
+  "_components-DNr1Wnh1.js": {
+    "file": "assets/components-DNr1Wnh1.js",
     "name": "components",
     "imports": [
-      "_routing-BfG_INYr.js"
+      "_routing-Bz1-Jje6.js"
     ]
   },
-  "_routing-BfG_INYr.js": {
-    "file": "assets/routing-BfG_INYr.js",
+  "_routing-Bz1-Jje6.js": {
+    "file": "assets/routing-Bz1-Jje6.js",
     "name": "routing"
   },
   "src/routes/[...404].tsx?pick=default&pick=$css": {
-    "file": "assets/_...404_-CLKfi_JK.js",
+    "file": "assets/_...404_-BqPDPGQD.js",
     "name": "_...404_",
     "src": "src/routes/[...404].tsx?pick=default&pick=$css",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_routing-BfG_INYr.js",
-      "_components-DgPT5NBf.js"
+      "_routing-Bz1-Jje6.js",
+      "_components-DNr1Wnh1.js"
     ]
   },
   "src/routes/about.tsx?pick=default&pick=$css": {
-    "file": "assets/about-BJwqGTwX.js",
+    "file": "assets/about-BJ2xz2dz.js",
     "name": "about",
     "src": "src/routes/about.tsx?pick=default&pick=$css",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_routing-BfG_INYr.js",
-      "_Counter--A_RVaML.js",
-      "_components-DgPT5NBf.js"
+      "_routing-Bz1-Jje6.js",
+      "_Counter-4ULZgMY6.js",
+      "_components-DNr1Wnh1.js"
     ]
   },
   "src/routes/index.tsx?pick=default&pick=$css": {
-    "file": "assets/index-B3dcNo46.js",
+    "file": "assets/index-ne7W9ivc.js",
     "name": "index",
     "src": "src/routes/index.tsx?pick=default&pick=$css",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_routing-BfG_INYr.js",
-      "_Counter--A_RVaML.js",
-      "_components-DgPT5NBf.js"
+      "_routing-Bz1-Jje6.js",
+      "_Counter-4ULZgMY6.js",
+      "_components-DNr1Wnh1.js"
     ]
   },
   "virtual:$vinxi/handler/client": {
-    "file": "assets/client-CUtRC79l.js",
+    "file": "assets/client-B4_oKbnb.js",
     "name": "client",
     "src": "virtual:$vinxi/handler/client",
     "isEntry": true,
     "imports": [
-      "_routing-BfG_INYr.js"
+      "_routing-Bz1-Jje6.js"
     ],
     "dynamicImports": [
       "src/routes/[...404].tsx?pick=default&pick=$css",
@@ -66,7 +66,7 @@
       "src/routes/index.tsx?pick=default&pick=$css"
     ],
     "css": [
-      "assets/client-B_YrYHXl.css"
+      "assets/client-F49WeONz.css"
     ]
   }
 }
