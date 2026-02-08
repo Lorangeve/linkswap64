@@ -21,6 +21,12 @@ mkdirSync('docs', { recursive: true });
 console.log('📁 Copying files to docs folder...');
 execSync('cp -r .output/public/* docs/');
 
+// Copy PWA manifest from public directory
+console.log('📱 Copying PWA files...');
+if (existsSync('public')) {
+  execSync('cp -r public/* docs/ 2>/dev/null || true');
+}
+
 // 4. Fix paths in all HTML files for GitHub Pages
 console.log('🔧 Fixing paths for GitHub Pages...');
 
@@ -33,10 +39,30 @@ function fixPathsInFile(filePath) {
   content = content.replace(/href="\/_build\//g, 'href="./_build/');
   content = content.replace(/src="\/_build\//g, 'src="./_build/');
   
+  // Fix A component href attributes (SolidJS router)
+  content = content.replace(/href="\/about"/g, 'href="./about"');
+  content = content.replace(/href="\/"/g, 'href="./"');
+  
   // Fix manifest paths
   content = content.replace(/output":"\//g, 'output":"./');
   content = content.replace(/href":"\//g, 'href":"./');
   content = content.replace(/key":"\//g, 'key":"./');
+  
+  // Add PWA manifest link if not present
+  if (!content.includes('rel="manifest"')) {
+    content = content.replace(
+      /<link rel="icon" href="\.\/favicon\.ico">/,
+      '<link rel="icon" href="./favicon.ico">\n<link rel="manifest" href="./manifest.json">\n<meta name="theme-color" content="#075985">'
+    );
+  }
+  
+  // Add service worker registration script
+  if (!content.includes('registerSW.js') && content.includes('</body>')) {
+    content = content.replace(
+      '</body>',
+      '<script>\nif (\'serviceWorker\' in navigator) {\n  window.addEventListener(\'load\', () => {\n    navigator.serviceWorker.register(\'./sw.js\');\n  });\n}\n</script>\n</body>'
+    );
+  }
   
   writeFileSync(filePath, content);
 }

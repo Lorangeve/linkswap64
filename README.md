@@ -73,9 +73,18 @@ The project is configured for Static Site Generation in `app.config.ts`:
 - `prerender: { crawlLinks: true }` - Automatically crawls and prerenders all routes
 - Generated static files: `/`, `/about/`, and `404.html` for SPA fallback
 
+### PWA Features
+This project includes Progressive Web App (PWA) support:
+- ✅ **Offline access** - Service worker caches resources for offline use
+- ✅ **Installable** - Can be installed as a native app on mobile/desktop
+- ✅ **Manifest** - App metadata for home screen installation
+- ✅ **Theme color** - Consistent UI theme
+- ✅ **Auto-update** - Service worker auto-updates when new version is available
+
 ### What the deploy script does:
 - ✅ Builds the project with SSG (Static Site Generation)
 - ✅ Prerenders all routes as static HTML files
+- ✅ Adds PWA support (manifest, service worker, theme color)
 - ✅ Copies all static files to `docs/` folder
 - ✅ Fixes absolute paths to relative paths for GitHub Pages
 - ✅ Creates `.nojekyll` file to bypass Jekyll processing

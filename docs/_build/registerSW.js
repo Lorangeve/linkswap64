@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/linkswap64/sw.js', { scope: '/linkswap64/' })})}
